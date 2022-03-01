@@ -4,6 +4,9 @@ pipeline {
     stage('Buzz Build') {
       steps {
         sh '''
+
+
+echo "I am a ${BUZZ_NAME}"
 echo "Building software....."
 sleep 5
 
@@ -25,5 +28,8 @@ echo "Tested the software!"'''
       }
     }
 
+  }
+  environment {
+    BUZZ_NAME = 'Worker Bee'
   }
 }
