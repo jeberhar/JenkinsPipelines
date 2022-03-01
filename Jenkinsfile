@@ -21,5 +21,11 @@ pipeline {
       }
     }
 
+    stage('Buzz Buzz') {
+      steps {
+        echo 'Bees Buzz!'
+      }
+    }
+
   }
 }
