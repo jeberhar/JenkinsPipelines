@@ -1,29 +1,27 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Buzz Build') {
       steps {
-        echo 'Placeholder'
-        sh 'echo Edited Placeholder'
+        sh '''
+echo "Building software....."
+sleep 5
+
+
+
+
+
+
+echo "Built the software!"'''
+        archiveArtifacts(artifacts: '*.*', fingerprint: true, allowEmptyArchive: true)
       }
     }
 
-    stage('Test') {
+    stage('Buzz Test') {
       steps {
-        sh 'sleep 5'
-        sh 'echo Success!'
-      }
-    }
-
-    stage('Deploy') {
-      steps {
-        echo 'Placeholder'
-      }
-    }
-
-    stage('Buzz Buzz') {
-      steps {
-        echo 'Bees Buzz!'
+        sh '''echo "Testing software....."
+sleep 5
+echo "Tested the software!"'''
       }
     }
 
