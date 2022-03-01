@@ -13,7 +13,7 @@ sleep 5
 
 
 echo "Built the software!"'''
-        archiveArtifacts(artifacts: '.sh', fingerprint: true)
+        archiveArtifacts(artifacts: '.*', fingerprint: true)
       }
     }
 
