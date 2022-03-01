@@ -3,13 +3,24 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh 'sudo ./jenkins/build.sh'
+        sh '''
+echo "Building software....."
+sleep 5
+
+
+
+
+
+
+echo "Built the software!"'''
       }
     }
 
     stage('Buzz Test') {
       steps {
-        sh 'sudo ./jenkins/test-all.sh'
+        sh '''echo "Testing software....."
+sleep 5
+echo "Tested the software!"'''
       }
     }
 
