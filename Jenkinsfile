@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Placeholder'
-        sh 'echo Another Placeholder'
+        sh 'echo Edited Placeholder'
       }
     }
 
