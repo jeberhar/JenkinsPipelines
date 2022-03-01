@@ -13,7 +13,7 @@ sleep 5
 
 
 echo "Built the software!"'''
-        archiveArtifacts(artifacts: 'pipeline.log', fingerprint: true)
+        archiveArtifacts(artifacts: 'pipeline.log', fingerprint: true, allowEmptyArchive: true)
       }
     }
 
