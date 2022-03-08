@@ -57,6 +57,12 @@ echo done'''
       }
     }
 
+    stage('Input') {
+      steps {
+        input(message: 'Did you enjoy this build?', submitter: 'admin', ok: 'Hell yes!')
+      }
+    }
+
   }
   environment {
     BUZZ_NAME = 'Worker Bee'
