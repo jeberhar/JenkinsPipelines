@@ -29,7 +29,7 @@ echo "Built the software!"'''
 
         stage('Stash') {
           steps {
-            stash(name: 'Stash', allowEmpty: true, includes: 'pipeline.log')
+            stash(name: 'Stash', allowEmpty: true, includes: 'target/**')
           }
         }
 
