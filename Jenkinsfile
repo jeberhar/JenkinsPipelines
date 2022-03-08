@@ -63,6 +63,14 @@ echo done'''
       }
     }
 
+    stage('Deploy to Staging') {
+      steps {
+        sh '''echo "Deploying to staging"
+sleep 3
+echo "Deploy to staging is complete"'''
+      }
+    }
+
   }
   environment {
     BUZZ_NAME = 'Worker Bee'
