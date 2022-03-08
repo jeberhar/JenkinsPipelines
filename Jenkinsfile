@@ -2,8 +2,10 @@ pipeline {
   agent any
   stages {
     stage('Buzz Build') {
-      steps {
-        sh '''
+      parallel {
+        stage('Buzz Build') {
+          steps {
+            sh '''
 
 
 echo "I am a ${BUZZ_NAME}"
@@ -16,7 +18,16 @@ sleep 5
 
 
 echo "Built the software!"'''
-        archiveArtifacts(artifacts: '*.*', fingerprint: true, allowEmptyArchive: true)
+            archiveArtifacts(artifacts: '*.*', fingerprint: true, allowEmptyArchive: true)
+          }
+        }
+
+        stage('Stash') {
+          steps {
+            stash(name: 'Stash', allowEmpty: true, includes: 'pipeline.log')
+          }
+        }
+
       }
     }
 
