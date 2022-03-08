@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'builder'
+    }
+
+  }
   stages {
     stage('Buzz Build') {
       parallel {
