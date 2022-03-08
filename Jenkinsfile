@@ -50,7 +50,7 @@ echo done'''
 
         stage('Unstash') {
           steps {
-            unstash 'Restore'
+            unstash 'Stash'
           }
         }
 
