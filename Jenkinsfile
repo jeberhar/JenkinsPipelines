@@ -71,7 +71,7 @@ echo done'''
 
     stage('Deploy to Staging') {
       when {
-        branch 'master'
+        branch 'main'
       }
       steps {
         sh '''echo "Deploying to staging"
