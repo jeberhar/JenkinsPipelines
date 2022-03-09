@@ -63,7 +63,7 @@ echo done'''
 
     stage('Input') {
       steps {
-        timeout(time: 2, unit: 'SECONDS') {  
+        timeout(time: 120, unit: 'SECONDS') {  
           input(message: 'Did you enjoy this build?', submitter: 'admin', ok: 'Hell yes!')
         }
       }
