@@ -6,16 +6,9 @@ pipeline {
         stage('Buzz Build') {
           steps {
             sh '''
-
-
 echo "I am a ${BUZZ_NAME}"
 echo "Building software....."
 sleep 5
-
-
-
-
-
 
 echo "Built the software!"'''
             archiveArtifacts(artifacts: '*.*', fingerprint: true, allowEmptyArchive: true)
@@ -69,6 +62,23 @@ echo done'''
       }
     }
 
+    stage('InputWhen Example') {
+            input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "admin"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I greet?')
+                }
+            }
+            when {
+                equals expected: "admin", actual: "${PERSON}"
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+    }
+    
     stage('Deploy to Staging') {
       when {
         branch 'main'
