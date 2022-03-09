@@ -8,7 +8,7 @@ pipeline {
             withCredentials(bindings: [string(credentialsId: 'plain', variable: 'ELASTIC_ACCESS_KEY')]) {
             // Environment Variable available in the remote shell
               sh 'env | grep ELASTIC_ACCESS_KEY'
-              sh "echo $\{ELASTIC_ACCESS_KEY}"
+              sh "echo ${ELASTIC_ACCESS_KEY}"
             }
             sh '''
 echo "I am a ${BUZZ_NAME}"
