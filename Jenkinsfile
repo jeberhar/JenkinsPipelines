@@ -28,6 +28,12 @@ echo "Built the software!"'''
           }
         }
 
+        stage('GIT env vars') {
+          steps {
+            sh 'env | grep GIT_'
+          }
+        }
+
       }
     }
 
