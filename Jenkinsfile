@@ -70,6 +70,9 @@ echo done'''
     }
 
     stage('Deploy to Staging') {
+      when {
+        branch 'master'
+      }
       steps {
         sh '''echo "Deploying to staging"
 sleep 3
