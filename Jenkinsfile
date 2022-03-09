@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('Buzz Build') {
           steps {
-            withCredentials(bindings: [string(credentialsId: 'devops-common.pem', variable: 'ELASTIC_ACCESS_KEY')]) {
+            withCredentials(bindings: [string(credentialsId: 'plain', variable: 'ELASTIC_ACCESS_KEY')]) {
             // Environment Variable available in the remote shell
               sh "env | grep ELASTIC_ACCESS_KEY"
             }
