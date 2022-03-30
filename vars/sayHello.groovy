@@ -3,7 +3,5 @@
 def call(String name = 'human') {
   def banner = libraryResource 'banner.txt'
   echo "Hello, ${name}."
-  sh """
-    cat banner
-  """
+  echo banner
 }
