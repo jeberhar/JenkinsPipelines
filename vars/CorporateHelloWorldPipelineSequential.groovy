@@ -12,7 +12,7 @@ def call(Map pipelineParams) {
                               }
                           }
                           stage("deploy") {
-                              when { branch 'main' }
+                              when { branch 'feature' }
                               steps {
                                   helloWorld(name: "${pipelineParams.name}", dayOfWeek: "${pipelineParams.dayOfWeek}")
                               }
@@ -27,7 +27,7 @@ def call(Map pipelineParams) {
                               }
                           }
                           stage("deploy") {
-                               when { branch 'main' }
+                               when { branch 'feature' }
                                steps {
                                   helloWorld(name: "${pipelineParams.name}", dayOfWeek: "${pipelineParams.dayOfWeek}")
                               }
