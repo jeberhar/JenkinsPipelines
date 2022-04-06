@@ -1,3 +1,7 @@
+options {
+  durabilityHint 'PERFORMANCE_OPTIMIZED'
+}
+
 def call(Map pipelineParams) {
     pipeline {
         agent any
@@ -8,5 +12,8 @@ def call(Map pipelineParams) {
                 }
             }
         }
+    }
+    options {
+        durabilityHint 'PERFORMANCE_OPTIMIZED'
     }
 }
