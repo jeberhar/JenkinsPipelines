@@ -3,6 +3,7 @@ def call(Map pipelineParams) {
     agent any
     options {
       durabilityHint 'PERFORMANCE_OPTIMIZED'
+      preserveStashes(buildCount: 5)
     }
     stages {
       stage('hello') {
